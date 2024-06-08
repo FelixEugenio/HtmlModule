@@ -4,8 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listas Ordenadas e Menus</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        nav{
+            height: 50px;
+            background: black;
+        }
+
+        nav ul li a {
+            color :#ffffff;
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 10px 20px;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        nav a:hover{
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        nav{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul{
+            display: flex;
+            list-style: none;
+        }
+    </style>
 </head>
 <body>
-    
+
+    <nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Agendamentos</a></li>
+    <li><a href="#">Conta</a></li>
+  </ul>
+    </nav>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ul>
+
+    <ol type="A">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ol>
+
+    <dl>
+     <dt>Cafe</dt>
+     <dd>Bebida preta</dd>
+     <dt>Cafe</dt>
+     <dd>Bebida preta</dd>
+    </dl>
 </body>
 </html>
