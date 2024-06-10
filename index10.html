@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        table{
+            border-collapse: collapse  ;
+        }
+        table caption{
+            caption-side: top;
+            text-align: center;
+            font-style: italic;
+            font-size: 14px;
+            margin: 5px;
+        }
+        table td,table th{
+            border: 1px solid #ccc;  
+            padding: 5px;
+            
+        }
+
+        tfoot td,table th{
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <p>Minha Tabela</p>
+    <table>
+        <caption>descicao basica</caption>
+        <thead>
+            <tr>
+         <th>Titulo 1</th>
+         <th>Titulo 1</th>
+         <th>Titulo 1</th>
+         <th>Titulo 1</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="3" rowspan="2">Conteudo</td>
+            <td>Conteudo</td>
+        </tr>
+        <tr>
+            <td>Conteudo</td>
+            <td>Conteudo</td>
+        </tr>
+        <tr>
+            <td>Conteudo</td>
+            <td>Conteudo</td>
+            <td>Conteudo</td>
+            <td>Conteudo</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>corpo 1</td>
+            <td>corpo 1</td>
+            <td>corpo 1</td>
+            <td>corpo 1</td>
+        </tr>
+    </tfoot>
+
+    </table>
+</body>
+</html>
