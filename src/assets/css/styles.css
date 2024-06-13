@@ -1,12 +1,10 @@
-*{
-    padding: 0;
-    margin: 0;
+.heading{
+    transition: all 1s ease-in-out;
 }
 
-.caixa{
-    width: 200px;
-    height: 200px;
+.heading:hover{
     background: red;
-    
 }
+
+
 
