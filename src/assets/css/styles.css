@@ -5,6 +5,7 @@
     --primary-color:#0A1128;
     --white-color:#ffff;
     --gap:3rem;
+    --secondary-color:#d5dd;
 }
 
 *{
@@ -71,7 +72,7 @@ a{
 }
 
 .main-content{
-    max-width: 1200px;
+    max-width: 120rem;
     margin: 0 auto;
     padding: var(--gap);
 }
@@ -87,6 +88,7 @@ a{
     left: 0;
     right: 0;
     width: 100%;
+    border-bottom:0.1rem solid var(--primary-color);
 }
 
 .menu-content{
@@ -114,5 +116,24 @@ a{
 .menu ul li a {
     display: block;
     padding: 1.8rem;
+    position: relative;
 }
+
+.menu ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    width: 0;
+    height: 0.2rem;
+    background: var(--secondary-color);
+    transition: all 300ms ease-in-out;
+}
+
+.menu ul li a::hover::after{
+    width: 50%;
+    left: 50%;
+}
+
+
 
