@@ -1,0 +1,1 @@
+type TemNome = {nome:string}
