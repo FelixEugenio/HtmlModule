@@ -15,10 +15,27 @@ class App extends Component{
    // super();
    // this.handlePclick = this.handlePclick.bind(this);
     state = {
-      name:'felix mavila',
-      counter:0
+      posts:[
+        {
+          id:1,
+          title:'o titulo',
+          body:'o corpo'
+        },
+        {
+          id:2,
+          title:'o titulo2',
+          body:'o corpo2'
+        },
+        {
+          id:3,
+          title:'o titulo2',
+          body:'o corpo2'
+        }
+      ]
+
     }
 
+    /*
   handlePclick = ()=>{
     //const {name} = this.state;
     //console.log(`h1 clicado ${name}`)
@@ -26,10 +43,15 @@ class App extends Component{
     const {counter} = this.state;
     const nextCounter = counter + 1;
   }
+    */
 
   render(){
-    const name = this.state.name;
-    return <h1 onClick={()=>this.handlePclick()}>{name}</h1>
+    
+    const {posts} = this.state;
+    //const name = this.state.name;
+    return (
+      <div>{posts.map(post => <h1 key={post.id}>{post.title}</h1>)}</div>
+    )
   }
 }
 
