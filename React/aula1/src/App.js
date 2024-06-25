@@ -11,19 +11,20 @@ import { Component } from "react";
 
 class App extends Component{
 
-  constructor(props){
-    super();
-    this.handlePclick = this.handlePclick.bind(this);
-    this.state = {
-      name:'felix mavila'
+ // constructor(props){
+   // super();
+   // this.handlePclick = this.handlePclick.bind(this);
+    state = {
+      name:'felix mavila',
+      counter:0
     }
 
-  }
-
-  handlePclick(){
+  handlePclick = ()=>{
     //const {name} = this.state;
     //console.log(`h1 clicado ${name}`)
     this.setState({name:'Eugenio'})
+    const {counter} = this.state;
+    const nextCounter = counter + 1;
   }
 
   render(){
