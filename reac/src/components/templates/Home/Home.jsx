@@ -4,6 +4,7 @@ import './styles.css'
 import { loadPosts} from  '../../../utils/load-posts'
 import { Posts } from '../../Posts/index';
 import { Button } from "../../Button";
+import { TextInput } from "../../Input";
 
  class Home extends Component {
 
@@ -64,7 +65,7 @@ import { Button } from "../../Button";
 
     const filteredPosts = !!searchValue ? 
     
-    posts.filter(post=>{
+    allPosts.filter(post=>{
       return post.title.toLowerCase().includes(searchValue.toLowerCase());
     })
     
@@ -72,15 +73,28 @@ import { Button } from "../../Button";
 
     return (
       <section className="container">
+        <div className="search-container">
         {!!searchValue && (
           <h1>search value: {searchValue}</h1>
         )}
-        <input
-        value={searchValue}
-         onChange={this.handleChange} 
-        type="search" 
-        /><br />
+         
+         <TextInput 
+         searchValue={searchValue}
+         handleChange={this.handleChange}
+         
+         />
+        </div>
+        
+
+        {filteredPosts.length > 0 && (
         <Posts  posts={filteredPosts}/>
+        )}
+
+        {filteredPosts.length == 0 && (
+         <p>Nao existem Posts</p>
+        )}
+
+
         <div className="button-container">
           {!searchValue && (
             <Button
