@@ -11,7 +11,7 @@ import { Button } from "../../Button";
    posts: [],
    allPosts: [],
    page: 0,
-   postsPerPage: 2
+   postsPerPage: 53
   }
 
   componentDidMount(){
@@ -45,13 +45,21 @@ import { Button } from "../../Button";
      
   render(){
 
-    const {posts} = this.state;
+    const {
+      page,
+      postsPerPage,
+      allPosts,
+      posts
+    } = this.state;
+
+    const noMorePosts = page + postsPerPage >= allPosts.length;
 
     return (
       <section className="container">
         <Posts  posts={posts}/>
         <div className="button-container">
         <Button
+        disabled={noMorePosts}
         onClick={this.loadMorePosts}
          text = "Load more page"
          />
