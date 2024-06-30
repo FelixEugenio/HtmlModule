@@ -62,6 +62,14 @@ import { Button } from "../../Button";
 
     const noMorePosts = page + postsPerPage >= allPosts.length;
 
+    const filteredPosts = !!searchValue ? 
+    
+    posts.filter(post=>{
+      return post.title.toLowerCase().includes(searchValue.toLowerCase());
+    })
+    
+    : posts;
+
     return (
       <section className="container">
         {!!searchValue && (
@@ -72,7 +80,7 @@ import { Button } from "../../Button";
          onChange={this.handleChange} 
         type="search" 
         /><br />
-        <Posts  posts={posts}/>
+        <Posts  posts={filteredPosts}/>
         <div className="button-container">
           {!searchValue && (
             <Button
