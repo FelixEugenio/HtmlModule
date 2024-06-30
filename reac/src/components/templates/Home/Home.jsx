@@ -11,7 +11,8 @@ import { Button } from "../../Button";
    posts: [],
    allPosts: [],
    page: 0,
-   postsPerPage: 53
+   postsPerPage: 53,
+   searchValue:''
   }
 
   componentDidMount(){
@@ -42,6 +43,12 @@ import { Button } from "../../Button";
 
     this.setState({posts,page:nextPage})
   }
+
+  handleChange = (event) =>{
+    const {value} = event.target;
+    this.setState({searchValue:value})
+
+  }
      
   render(){
 
@@ -49,20 +56,32 @@ import { Button } from "../../Button";
       page,
       postsPerPage,
       allPosts,
-      posts
+      posts,
+      searchValue
     } = this.state;
 
     const noMorePosts = page + postsPerPage >= allPosts.length;
 
     return (
       <section className="container">
+        {!!searchValue && (
+          <h1>search value: {searchValue}</h1>
+        )}
+        <input
+        value={searchValue}
+         onChange={this.handleChange} 
+        type="search" 
+        /><br />
         <Posts  posts={posts}/>
         <div className="button-container">
-        <Button
-        disabled={noMorePosts}
-        onClick={this.loadMorePosts}
-         text = "Load more page"
-         />
+          {!searchValue && (
+            <Button
+            disabled={noMorePosts}
+            onClick={this.loadMorePosts}
+             text = "Load more page"
+             />
+          )}
+        
         </div>
         
       </section>
