@@ -91,7 +91,7 @@ export  const Home = () =>{
           <Button
           disabled={noMorePosts}
           onClick={loadMorePosts}
-           text = "Load more page"
+           text = "load more"
            />
         )}
       
