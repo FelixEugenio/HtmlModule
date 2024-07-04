@@ -1,14 +1,30 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import Home from './Home';
+import { server } from '../mocks/mock';
 
 
-describe('Home',()=>{
+describe('<Home />',()=>{
+  beforeAll(()=>{
+    server.listen()
+  })
 
-  it('test One', () => {
-    expect(1).toBe(1);
+  afterEach(()=>{
+    server.resetHandlers()
+  })
+
+  afterAll(()=>{
+    server.close();
+  })
+
+  it('should render saerch post and load more', async () => {
+    render(<Home />)
+
+    const noMorePosts = screen.getByText('Nao existem Posts = ')
+
+    await waitForElementToBeRemoved(noMorePosts);
+
+    screen.debug()
   });
-
- 
 
 })
 
